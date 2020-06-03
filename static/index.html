@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $(".menu_con a").click(function(){
+                var iNum = $(this).parent().index();
+                $(this).addClass("active").parent().siblings().children().removeClass("active");
+                $(".main_body").eq(iNum).show().siblings(".main_body").hide();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <div class="side_bar">
+        <div class="user_info">
+            <img style="background: url(img/person.png) 0px -68px no-repeat" >
+        </div>
+
+        <div class="menu_con">
+            <ul class="sub_menu show">
+                <li><a href="javascript:;" class="active">Bottle</a></li>
+                <li><a href="#" class="">Message</a></li>
+                <li><a href="#" class="">Post</a></li>
+                <li><a href="#" class="">Other</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="main_body">
+        <div class="main_body" style="display: block;">
+            <span class="breadcrub">
+                当前位置：漂流瓶
+            </span>
+            <div class="pannel">
+                <form class="fmSty">
+                <div class="form_group">
+                    <label>纸条标题:</label>
+                    <input type="text" class="input_txt2" name="articleName" autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label>纸条内容:</label>
+                    <textarea class="input_multxt" name="content"></textarea>
+                </div>
+                <input type="image" class="input_sub">
+            </form>
+            </div>
+        </div>
+
+
+        <div class="main_body" >
+            <div class="breadcrub">
+                当前位置：消息
+            </div> 
+                <div class="mes">
+                    <h3>标题</h3>
+                    <p>内容</p>
+                    <input type="image" class="input_sub">
+                </div>
+    
+                <ul class="pagenation">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="javascript:;">上一页 </a> </li>
+                    <li> <a href="javascript:;">下一页</a></li>
+                    <li><a href="#">末页</a></li>
+                    <li>共5条记录/共5页/当前1页</li>
+                </ul>
+            </div>
+
+            <div class="main_body" >
+                <div class="breadcrub">
+                    当前位置：未来邮局
+                </div>
+                <div class="pannel">
+                    <form class="fmSty">
+                    <div class="form_group">
+                        <label>信件标题:</label>
+                        <input type="text" class="input_txt2" name="articleName" autocomplete="off">
+                    </div>
+                    <div class="form_group">
+                        <label>信件内容:</label>
+                        <textarea class="input_multxt" name="content"></textarea>
+                    </div>
+                    <input type="image" class="input_sub">
+                </form>
+                </div>
+            </div>
+    
+            <div class="main_body" >
+                <div class="breadcrub">
+                    当前位置：其他
+                </div>
+                <div class="pannel">
+                    <form class="fmSty">
+                    <div class="form_group">
+                        <label>文章标题:</label>
+                        <input type="text" class="input_txt2" name="articleName" autocomplete="off">
+                    </div>
+                    <div class="form_group">
+                        <label>文章内容:</label>
+                        <textarea class="input_multxt" name="content"></textarea>
+                    </div>
+                </form>
+                </div>
+            </div>  
+
+     </div>
+
+        
+</body>
+</html>

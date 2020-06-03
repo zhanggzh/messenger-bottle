@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <script src="js/jquery.color.js"></script>
+        <script>
+            $(function(){
+                $(".input_txt").click(function(){
+                var sTr = $(this).val();
+                if(sTr == "请输入用户名" || sTr == "请输入密码") {
+                    $(this).val("");
+                }
+                })
+                $(".sign").click(function(){
+                    $("#signUp_left").stop().animate({
+                        marginLeft:'0',
+                        height: '0',
+                    },1200)
+                    $("#signUp_right").stop().animate({
+                        marginLeft:'-332px',
+                        height: '0',
+                        padding : '0'
+                    },1200)
+                    $("#signUp_left2").stop().animate({
+                        marginLeft:'0',
+                        backgroundColor : 'white',
+                    },1200)
+                    $("#signUp_right2").stop().animate({
+                        marginLeft:'-332px',
+                    },1200)
+                    $(".bg_left").stop().animate({
+                        right: 9999,
+                    },1200)
+                    $(".bg_right").stop().animate({
+                        left: 9999,
+                    },1200)
+                })
+                $(".login").click(function(){
+                    $("#signUp_left").stop().animate({
+                        marginLeft:'-332px',
+                        height: '520px',
+                    },1200)
+                    $("#signUp_right").stop().animate({
+                        marginLeft:'0',
+                        height: '440px',
+                        padding : '40px 0'
+                    },1200)
+                    $("#signUp_left2").stop().animate({
+                        marginLeft:'-332px',
+                    },1200)
+                    $("#signUp_right2").stop().animate({
+                        marginLeft:'0',
+                    },1200)
+                    $(".bg_left").stop().animate({
+                        right: 0,
+                    },600)
+                    $(".bg_right").stop().animate({                  
+                        left: 0,
+                    },600)
+                })
+                $(".about").click(function(){
+                    $("#mask").show();
+                })
+                $("#mask a").click(function(){
+                    $("#mask").hide();
+                })
+            })
+        </script>
+</head>
+<body>
+    <div class="login_logo">
+        <div>
+            <img src="img/messeger.png" alt="">
+            <span id="span01">M</span><span id="span02">essenger bottle</span>
+        </div>
+        <ul>
+            <li><a href="">主页</a></li>   
+            <li><a class="login" href="##">登陆</a></li>
+            <li><a class="sign" href="##">注册</a></li>
+            <li><a class="about" href="##">关于我们</a></li>
+        </ul>
+    </div>
+    <div  id="signUp_left2" class="login_form_left"  >
+        <h3 style="color: #79767A; font-size:14px; text-indent: 2em;padding: 30px 40px;margin-top:10px;font-weight: 600;">漂流瓶的含义在于被寄托容的希望,而非在于被拾取..</h3>
+        <img src="img/bottle2.png" style="width: 332px;margin-top: 70px ;" alt="">
+    </div>
+    <div id="signUp_left" class="login_form_left" >
+        <img src="img/bottle.png" style="width: 332px;margin-top: -50px;" alt="">
+    </div>
+    <form  id="signUp_right2" class="login_form" name = "login" >     
+        <div class="login_title" style="padding: 0 30px;">
+            <h1 style="font-size: 20px;font-weight: 700;">用户注册</h1>
+        </div>
+        <input type="text" placeholder="用户名" autocomplete="off" class="input_txt" name = "userName">
+        <input type="password" placeholder="密码" class="input_txt" name = "password">
+        <input type="text" autocomplete="off" placeholder="姓名" class="input_txt" name="name">
+        <input type="text" placeholder="学号" class="input_txt" name = "stuNum">
+        <input type="password" placeholder="身份证号后六位" class="input_txt" name = "idNum">
+        <div class="login_title" >
+            <p style="font-size: 12px;margin-top: 2px;padding: 0;">
+                *本平台仅对沈阳工业大学校内开放<br> 
+                &nbsp;为创建良好网络环境,账号将与学生卡号绑定
+            </p>
+        </div>
+        <input type="submit" value="注 册" class="input_login" style="margin-top: 0px;">
+    </form>
+    <form id="signUp_right" class="login_form"  name = "login" >
+        <div class="login_title">
+            <h1 style="font-size: 20px;font-weight: 700;">Login</h1>
+            <p style="font-size: 12px;margin-top: 2px;padding: 0;">Welcome to join us !</p>
+        </div>
+        <div>
+            <input type="text" autocomplete="off" class="input_txt" name = "userName" value="请输入用户名">
+        </div>
+        <div>
+            <input type="password" name = "password"  class="input_txt" value="请输入密码">
+        </div>
+        <div class="remember"> 
+            <input type="checkbox" name="remember" ><label>记住用户名</label>
+            <div style="position: absolute; right:0 ;"><a class="sign" href="##">Sign up</a></div>
+        </div> 
+        <p style="margin: auto;text-align: center;font-size: 10px;color: #79767A;margin-top:84px"> Other Way</p>
+        <ul style="overflow: hidden; margin-top: 25px;margin-bottom: 20px;">
+            <li class="icon"><a href=""><img src="img/facebook.png" style="width: 32px"></a></li>
+            <li class="icon"><a href=""><img src="img/gmail.png" style="width: 32px"></a></li>
+            <li class="icon"><a href=""><img src="img/twiter.png" style="width: 32px"></a></li>
+        </ul>
+        <input type="submit" value="登 录" class="input_login">
+    </form>
+    <div class="login_bg">
+        <div class="bg_left"></div>
+        <div class="bg_right"></div>
+    </div>
+    <div id="mask">
+        <a href="##"><img src="img/exit.png" style="width: 20px;"  alt=""></a>
+    </div>
+</body>
+</html>
